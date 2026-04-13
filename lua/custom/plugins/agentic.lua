@@ -2,11 +2,12 @@ return {
   {
     'carlos-algms/agentic.nvim',
     opts = {
-      provider = 'cline-acp',
+      provider = 'pi-acp',
       acp_providers = {
-        ['cline-acp'] = {
-          command = 'cline',
-          args = { '--acp' },
+        ['pi-acp'] = {
+          name = 'pi',
+          command = 'pi-acp',
+          args = {},
         },
       },
     },
@@ -17,7 +18,7 @@ return {
           require('agentic').toggle()
         end,
         mode = { 'n', 'v', 'i' },
-        desc = 'Toggle Cline Chat',
+        desc = 'Toggle pi Chat',
       },
     },
   },
