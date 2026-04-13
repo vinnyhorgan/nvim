@@ -236,18 +236,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   callback = function() vim.hl.on_yank() end,
 })
 
-vim.api.nvim_create_autocmd('FileType', {
-  desc = 'C editing defaults',
-  group = vim.api.nvim_create_augroup('custom-c-settings', { clear = true }),
-  pattern = { 'c', 'h' },
-  callback = function()
-    vim.opt_local.tabstop = 4
-    vim.opt_local.shiftwidth = 4
-    vim.opt_local.softtabstop = 4
-    vim.opt_local.expandtab = true
-  end,
-})
-
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -758,9 +746,7 @@ require('lazy').setup({
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
-      enabled = function()
-        return vim.bo.filetype ~= 'AgenticInput'
-      end,
+      enabled = function() return vim.bo.filetype ~= 'AgenticInput' end,
 
       keymap = {
         -- 'default' (recommended) for mappings similar to built-in completions
