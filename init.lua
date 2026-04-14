@@ -751,7 +751,7 @@ require('lazy').setup({
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
-      enabled = true,
+      enabled = function() return true end,
 
       keymap = {
         -- 'default' (recommended) for mappings similar to built-in completions
