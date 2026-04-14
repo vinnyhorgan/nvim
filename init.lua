@@ -751,7 +751,7 @@ require('lazy').setup({
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
-      enabled = function() return vim.bo.filetype ~= 'AgenticInput' end,
+      enabled = true,
 
       keymap = {
         -- 'default' (recommended) for mappings similar to built-in completions
